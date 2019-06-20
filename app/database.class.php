@@ -5,24 +5,13 @@
    */
   class database // on crée notre classe database qui fera notre connexion à notre base de données//
   {
-      private $db_name; // on declare nos variables en tant que proprietés de notre classe qui seront passé en argument des fonctions
-      private $db_user;
-      private $db_pass;
-      private $db_host;
       private $pdo;
 
-    function __construct($db_name, $db_user = 'root', $db_pass = 'root', $db_host = 'localhost') //  on fait passé en argument directement dans la class les données de connexion à la base de donnée//
-    {
-      $this->db_name = $db_name;
-      $this->db_user = $db_user;
-      $this->db_pass = $db_pass;
-      $this->db_host = $db_host;
-    }
     public function getPdo(){ // cette fonction va nous permettre de récupérer la connexion à notre base de données en instanciant un objet $pdo de la class pdo
       if ($this->pdo === null) { // cela nous permet d'eviter de faire a chaque fois une connexion à notre base de données.
         try
           {
-            $pdo = new PDO('mysql:host=localhost;dbname=blog', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+            $pdo = new PDO('mysql:host=localhost;dbname=blog', $_SERVER['MYSQL_USER'] , $_SERVER['MYSQL_PASSWORD'], array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
           }
           catch (Exception $e)
           {

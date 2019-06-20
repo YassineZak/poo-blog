@@ -17,7 +17,7 @@
         }
       }
       public  function __construct(){
-      $this->settings =  require dirname(__DIR__) .'\config\configuration.php'; // on fait un require afin que notre variable qui contient un tableau vide récupére le tableau saisi dans notre page configuration
+      $this->settings =  require dirname(__DIR__) .'/config/configuration.php'; // on fait un require afin que notre variable qui contient un tableau vide récupére le tableau saisi dans notre page configuration
       }
 
     public static function get($key){ // cette fonction va nous permettre de récupérer la valeur de chaque information de connexion de notre base de données
