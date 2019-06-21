@@ -1,7 +1,8 @@
 <?php
     session_start();
+    dump('test');
     if (isset ($_SESSION['id_user'])) {
-        $verifAdmin = users::is_admin($_SESSION['id_user']);
+        $verifAdmin = app\Users::is_admin($_SESSION['id_user']);
         if (!$verifAdmin) {
           header('Location: ../public/index.php');
         }
@@ -12,10 +13,12 @@
 
     $id = intval($_GET['id']); // on convertie en integer afin que de sécuriser notre requête et eviter l'injection
     if ($id > 0) {
-      $dataSingle = article::getSingleArticle($id); // on recupérer l'ensemble des informations de l'article pour pré remplir notre formulaire d'edition
-      $updateSingle = article::updateArticle($id);
+      dump($id);
+      $dataSingle = app\Article::getSingleArticle($id); // on recupérer l'ensemble des informations de l'article pour pré remplir notre formulaire d'edition
+      $updateSingle = app\Article::updateArticle($id);
     }
     else  {
+      dump('stop');
       header('Location: index.php?p=home');
       die;
     }

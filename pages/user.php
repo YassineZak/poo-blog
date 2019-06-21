@@ -3,13 +3,13 @@
 session_start();
 $id = intval($_GET['id']); // on convertie en integer afin que de sécuriser notre requête et eviter l'injection
 if ($id > 0) {
-  users::getArticleByuser($id);
+  app\Users::getArticleByuser($id);
 }
 else  {
   header('Location: index.php?p=home');
   die;
 }
-foreach ( users::getArticleByuser($id) as $articleUser):?>
+foreach ( app\Users::getArticleByuser($id) as $articleUser):?>
   <!-- Main Content -->
   <div class="container">
     <div class="row">

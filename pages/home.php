@@ -1,7 +1,9 @@
 
 <?php
 session_start();
- foreach ( article::getLast() as $data):
+use app\Article;
+
+ foreach ( Article::getLast() as $data):
    $data->getUrl()?>
   <!-- Main Content -->
 

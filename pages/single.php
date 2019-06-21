@@ -1,9 +1,11 @@
 
 <?php
 session_start();
+use app\Article;
+
   $id = intval($_GET['id']); // on convertie en integer afin que de sécuriser notre requête et eviter l'injection
   if ($id > 0) {
-    $dataSingle = article::getSingleArticle($id);
+    $dataSingle = Article::getSingleArticle($id);
   }
   else  {
     header('Location: index.php?p=home');

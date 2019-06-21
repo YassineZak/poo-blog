@@ -1,5 +1,5 @@
 <?php if (isset($_POST['pseudo']) && isset($_POST['pw'])){
-  users::connexion($_POST['pseudo'],$_POST['pw'] );
+  app\Users::connexion($_POST['pseudo'],$_POST['pw'] );
 } ?>
 
 

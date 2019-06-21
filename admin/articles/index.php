@@ -2,7 +2,7 @@
 <?php
     session_start();
     if (isset ($_SESSION['id_user'])) {
-        $verifAdmin = users::is_admin($_SESSION['id_user']);
+        $verifAdmin = app\Users::is_admin($_SESSION['id_user']);
         if (!$verifAdmin) {
           header('Location: ../public/index.php');
         }
@@ -13,9 +13,9 @@
     <h2 class="admin col-md-5 offset-4">Administration des articles</h2>
     <div class="col-md-11 offset-1 table-responsive">
         <?php
-        $test = new table;
+        $test = new app\Table;
         $test->tableau(array('Titre', 'Auteur', 'Extrait'));
-        foreach ( article::getLast() as $data):?>
+        foreach ( app\Article::getLast() as $data):?>
         <tr>
         <td class="col-md-2"><?=$data->titre?></td>
         <td class="col-md-2"><?=$data->user_name?></td>

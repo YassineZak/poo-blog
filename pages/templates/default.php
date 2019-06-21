@@ -1,6 +1,6 @@
 <?php
 if (isset($_SESSION['pseudo']) && !(empty($_SESSION['pseudo']))) {
-  $verifAdmin = users::is_admin($_SESSION['id_user']);
+  $verifAdmin = app\Users::is_admin($_SESSION['id_user']);
   if ($verifAdmin) {
     ob_start();
     include_once '../pages/inc/nav_admin.inc.php';

@@ -3,14 +3,14 @@
 session_start();
 $id = intval($_GET['id']); // on convertie en integer afin que de sécuriser notre requête et eviter l'injection
 if ($id > 0) {
-categorie::getArticleByCategorie($id);
+app\Categorie::getArticleByCategorie($id);
 
 }
 else  {
   header('Location: index.php?p=home');
   die;
 }
-foreach ( categorie::getArticleByCategorie($id) as $articleCat):?>
+foreach ( app\Categorie::getArticleByCategorie($id) as $articleCat):?>
   <!-- Main Content -->
   <div class="container">
     <div class="row">
