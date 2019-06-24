@@ -1,13 +1,16 @@
 <?php
     session_start();
+    ini_set('display_startup_errors',1);
+    ini_set('display_errors',1);
+    error_reporting(-1);
     if (isset ($_SESSION['id_user'])) {
         $verifAdmin = app\Users::is_admin($_SESSION['id_user']);
         if (!$verifAdmin) {
-          header('Location: ../public/index.php');
+          header('Location: index.php');
         }
     }
     else {
-      header('Location: ../public/index.php');
+      header('Location: index.php');
     }
 
     $id = intval($_GET['id']); // on convertie en integer afin que de sécuriser notre requête et eviter l'injection
