@@ -69,6 +69,7 @@
               echo "Un ou plusieurs champs ne sont pas renseignées.";
             }
             else {
+
               $titre = trim(strip_tags($_POST['titre']));
               $contenu = trim(strip_tags($_POST['message']));
               $categorie_id = trim(strip_tags($_POST['categorie']));
@@ -83,7 +84,7 @@
                 echo 'erreur modification';
               }
               else {
-                   header("Location:admin.php?p=index");
+                   header("Location:admin.php?p=home");
                  }
                }
              }

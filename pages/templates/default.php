@@ -31,21 +31,21 @@ else {
     <title>Site Article POO</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../pages/templates/template_bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="templates/template_bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
-    <link href="../pages/templates/template_bootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="templates/template_bootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="../pages/templates/template_bootstrap/css/clean-blog.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link href="templates/template_bootstrap/css/clean-blog.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
   </head>
 
   <body><?=$nav?>
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('../pages/templates/template_bootstrap/img/home-bg.jpg')">
+    <header class="masthead" style="background-image: url('templates/template_bootstrap/img/home-bg.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -90,21 +90,21 @@ else {
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright yassine zakari 2018</p>
+            <p class="copyright text-muted">Copyright yassine zakari <?=date("Y");?></p>
           </div>
         </div>
       </div>
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../pages/templates/template_bootstrap/vendor/jquery/jquery.min.js"></script>
-    <script src="../pages/templates/template_bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="templates/template_bootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="templates/template_bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="../pages/templates/template_bootstrap/js/clean-blog.min.js"></script>
+    <script src="templates/template_bootstrap/js/clean-blog.min.js"></script>
 
     <!-- personnel script -->
-    <script type="text/javascript" src="../public/js/style.js"></script>
+    <script type="text/javascript" src="js/style.js"></script>
      
     </body>
 

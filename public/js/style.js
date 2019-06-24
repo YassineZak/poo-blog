@@ -106,3 +106,13 @@ $( document ).ready( function( )
 {
     $( '.delete' ).bootstrap_confirm_delete( );
 } );
+
+// detection du changement de données dans le formulaire d'edition d'article
+
+$(document).ready(function(){
+    $( "#contactForm" ).change(function() {
+        event.preventDefault();
+        $('#sendMessageButton').prop("disabled", false);
+        $("#sendMessageButton").attr('class', 'btn btn-primary');
+      });
+      })

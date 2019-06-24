@@ -1,6 +1,5 @@
 <?php
     session_start();
-    dump('test');
     if (isset ($_SESSION['id_user'])) {
         $verifAdmin = app\Users::is_admin($_SESSION['id_user']);
         if (!$verifAdmin) {
@@ -13,12 +12,10 @@
 
     $id = intval($_GET['id']); // on convertie en integer afin que de sécuriser notre requête et eviter l'injection
     if ($id > 0) {
-      dump($id);
-      $dataSingle = app\Article::getSingleArticle($id); // on recupérer l'ensemble des informations de l'article pour pré remplir notre formulaire d'edition
-      $updateSingle = app\Article::updateArticle($id);
+      $dataSingle = app\Article::getSingleArticle($id);
+      app\Article::updateArticle($id);
     }
     else  {
-      dump('stop');
       header('Location: index.php?p=home');
       die;
     }
@@ -58,7 +55,7 @@
     <br>
     <div id="success"></div>
     <div class="form-group">
-      <button type="submit" class="btn btn-primary" id="sendMessageButton">Editer</button>
+      <button type="submit" class="btn btn-secondary" id="sendMessageButton" disabled>Editer</button>
     </div>
   </form>
   </div>
