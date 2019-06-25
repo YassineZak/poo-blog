@@ -57,7 +57,7 @@
       }
     }
     public static function is_admin($username){
-      $req = app::getDb()->getPdo();
+      $req = App::getDb()->getPdo();
       $verifstatut = $req->query("SELECT statut FROM users WHERE id_user = $username");
       $result = $verifstatut->fetchObject();
       if ($result->statut == 1) {
@@ -77,7 +77,7 @@
 
       $usernameSecure = trim(strip_tags($username)); // on securise nos éléments
       $passwordSecure = trim(strip_tags($password));
-      $req = app::getDb()->getPdo(); // on recupere la connexion à notre base de donnée
+      $req = App::getDb()->getPdo(); // on recupere la connexion à notre base de donnée
       $verifUser = $req->query("SELECT user_name FROM users WHERE user_name = '$usernameSecure'"); // on verifie dans notre base de données si le pseudo n'as pas déja été crée auparavant
       $occurence = $verifUser->RowCount();
       if ($occurence > 0 ) {
@@ -109,7 +109,7 @@
       }
     }
     public static function getArticleByuser($id){ // cette fonction nous permettera de récupérer les articles avec leur categorie
-        return app::getDb()->query("SELECT * FROM articles LEFT JOIN categorie ON categorie.id = articles.categorie_id LEFT JOIN users ON users.id_user = articles.users_id WHERE articles.users_id = $id", __CLASS__);
+        return App::getDb()->query("SELECT * FROM articles LEFT JOIN categorie ON categorie.id = articles.categorie_id LEFT JOIN users ON users.id_user = articles.users_id WHERE articles.users_id = $id", __CLASS__);
       }
 
     public function __get($get){
@@ -128,7 +128,7 @@
 
      }
   public static function getAllUsers(){
-    return app::getDb()->query("SELECT * FROM users", __CLASS__);
+    return App::getDb()->query("SELECT * FROM users", __CLASS__);
     }
   public static function showAdmin($id_user){
     if (self::is_admin($id_user)) {
@@ -140,14 +140,21 @@
   }
   public static function changeAdminStat($id_user){
     if (self::is_admin($id_user)) {
-      $req = app::getDb()->getPdo();
-      $verifstatut = $req->query("UPDATE users SET statut = 0");
+      $req = App::getDb()->getPdo();
+      $req->query("UPDATE users SET statut = 0 WHERE id_user = $id_user");
     }
     else {
-      $req = app::getDb()->getPdo();
-      $verifstatut = $req->query("UPDATE users SET statut = 1");
+      $req = App::getDb()->getPdo();
+      $req->query("UPDATE users SET statut = 1 WHERE id_user = $id_user");
     }
   }
+  
+  public function deleteUser($id){
+    $req = App:: getDb()->getPdo();
+    $result = $req->prepare("DELETE from users WHERE id_user = :id");
+    $result->bindParam(':id', $id);
+    $result->execute();
+    }
 
   }
  ?>
