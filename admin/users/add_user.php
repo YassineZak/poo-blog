@@ -3,11 +3,11 @@ session_start();
 if (isset ($_SESSION['id_user'])) {
     $verifAdmin = app\Users::is_admin($_SESSION['id_user']);
     if (!$verifAdmin) {
-      header('Location: ../public/index.php');
+      header('Location: index.php');
     }
 }
 else {
-  header('Location: ../public/index.php');
+  header('Location: index.php');
 }  ?>
 
 

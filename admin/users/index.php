@@ -3,11 +3,11 @@
     if (isset ($_SESSION['id_user'])) {
         $verifAdmin = app\Users::is_admin($_SESSION['id_user']);
         if (!$verifAdmin) {
-          header('Location: ../public/index.php');
+          header('Location: index.php');
         }
     }
     else {
-      header('Location: ../public/index.php');
+      header('Location: index.php');
     }?>
     <h2 class="admin col-md-5 offset-4">Administration des Membres</h2>
     <div class="col-md-11 offset-1 table-responsive">

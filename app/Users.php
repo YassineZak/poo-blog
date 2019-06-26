@@ -126,7 +126,7 @@
       $html .= '<p><a href="' . $this->getUrl() . '">Voir la suite</a></p>';
       return $html;
 
-     }
+      }
   public static function getAllUsers(){
     return App::getDb()->query("SELECT * FROM users", __CLASS__);
     }

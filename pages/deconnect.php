@@ -1,3 +1,3 @@
 <?php
-users::deconnexion();
+app\Users::deconnexion();
  ?>

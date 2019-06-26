@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['pseudo']) && isset($_POST['pw'])){
-  users::inscription($_POST['pseudo'],$_POST['pw'] );
+  app\Users::inscription($_POST['pseudo'],$_POST['pw'] );
 } ?>
 
 

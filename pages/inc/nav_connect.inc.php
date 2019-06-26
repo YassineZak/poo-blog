@@ -12,7 +12,7 @@
           <a class="nav-link" href="index.php">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../pages/templates/template_bootstrap/about.html">About</a>
+          <a class="nav-link" href="templates/template_bootstrap/about.html">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="index.php?p=post_article">Poster article</a>

@@ -5,7 +5,7 @@ if (is_null($_SESSION['id_user'])) {
 }
 if (isset($_POST['titre'])){
 
-  article::insert_article($_POST['titre'],$_POST['message'],$_POST['categorie'],$_SESSION['id_user']);
+  app\Article::insert_article($_POST['titre'],$_POST['message'],$_POST['categorie'],$_SESSION['id_user']);
 } ?>
 
 <div class="container">

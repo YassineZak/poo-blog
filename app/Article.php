@@ -98,7 +98,7 @@
         echo 'suppression impossible';
       }
       else {
-           header("Location:admin.php?p=index");
+           header("Location:admin.php?p=articles/index");
          }
 
 
